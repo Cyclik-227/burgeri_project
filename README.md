@@ -34,4 +34,4 @@ BurgerFlow — это Fullstack-приложение для заказа бур�
 
 1. Клонируйте репозиторий:
    `bash
-   git clone [https://github.com/Cyclik-227/burger-project.git](https://github.com/Cyclik-227/burger-project.git)
+   git clone [https://github.com/Cyclik-227/burger-project.git](https://github.com/Cyclik-227/burger-project.git)`
