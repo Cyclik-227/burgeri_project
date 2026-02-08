@@ -1,4 +1,7 @@
 # 🍔 BurgerFlow — Самая сочная доставка в вебе
+[![GitHub stars](https://img.shields.io/github/stars/Cyclik-227/burgeri_project?style=social&label=Stars)](https://github.com/Cyclik-227/burgeri_project/stargazers)
+[![Top language](https://img.shields.io/github/languages/top/Cyclik-227/burgeri_project)](https://github.com/Cyclik-227/burgeri_project)
+
 
 ![Banner](https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
