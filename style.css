@@ -180,16 +180,30 @@ footer{
     backdrop-filter: blur(3px);
     margin-top: 1em;
     margin-left: 2em;
-    height: min-content;
+    height: max-content;
 }
 .footer-info p{
     color: #868686;
     transition: all .1s;
     user-select: none;
+    height: 0.5em;
 
     &:hover{
         transition: all .1s;
         color: #e2e2e2;
+    }
+}
+.footer-info a{
+    color: #a3a3a3;
+    transition: all .1s;
+    user-select: none;
+    width: fit-content;
+    border-radius: 0.5em;
+    text-decoration: initial;
+
+    &:hover{
+        transition: all .1s;
+        color: rgb(239, 230, 230);
     }
 }
 .main-rewiev{
@@ -203,8 +217,8 @@ footer{
     color: var(--text-inv);
     min-height: 100vh;
     text-align: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 0.2fr);
+    grid-template-rows: repeat(2, 0.2fr);
 }
 .otziv{
     display: flex;
@@ -215,19 +229,12 @@ footer{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 1em;
     backdrop-filter: blur(1.5px);
-    width: fit-content;
+    width: 30em;
     padding: 1.4em;
     margin: 2em;
     transition: all .2s;
     box-sizing: border-box;
     height: max-content;
-
-    &:hover{
-        transition: all .3s;
-        transform:translateY(-10px);
-        box-shadow: 8px 12px 10px #00000091;
-
-    }
 }
 .star{
     align-items: center;
@@ -240,4 +247,19 @@ footer{
     mask-size: 100% 100%;
     transition: all .2s;
     --svg: url(/sourrce/star-fill.svg);  
+}
+.otziv img{
+    border-radius: 0.5em;
+}
+.github{
+    align-items: center;
+    mask-image: var(--svg);
+    mask-repeat: no-repeat;
+    background-color: #b3b3b3;
+    width: 1em;
+    display: inline-block;
+    height: 1em;
+    mask-size: 100% 100%;
+    transition: all .2s;
+    --svg: url(/sourrce/github.svg);  
 }
