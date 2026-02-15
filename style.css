@@ -74,6 +74,7 @@ main {
     text-align: center;
     color: #fff;
     min-height: 50vh;
+    height: 85em;
 }
 
 .text-burgers {
@@ -114,6 +115,11 @@ main {
     box-sizing: border-box;
 }
 
+.burger a{
+    text-decoration: none;
+    color: #c8b8d3;
+}
+
 .burger img {
     width: 15em;
     height: auto;
@@ -130,9 +136,8 @@ footer {
     margin-top: auto;
     width: 100vw;
     position: relative;
-    right: 0;
-    left: 0;
     min-height: calc(100vh - 80vh);
+    gap: 5em;
 }
 
 .footer-info {
@@ -145,6 +150,13 @@ footer {
     margin-top: 1em;
     margin-left: 2em;
     height: min-content;
+}
+
+.footer-info img {
+    height: 15em;
+    width: 15em;
+    margin-top: 1em;
+    border-radius: 3em;
 }
 
 .footer-info p {
@@ -160,6 +172,12 @@ footer {
     width: fit-content;
     border-radius: 0.5em;
     text-decoration: initial;
+}
+
+.footer-info img:hover{
+    transition: all .2s;
+    transform: translateY(-4px);
+    box-shadow: 8px 12px 10px #00000091;
 }
 
 .footer-info a:hover {
