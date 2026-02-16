@@ -1,7 +1,8 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-image: url('https://camo.githubusercontent.com/e6658b6b7106d0733bba109276e523461edd7c598a4d518befe35f4c3fff2422/68747470733a2f2f696d616765732e756e73706c6173682e636f6d2f70686f746f2d313535303534373636302d6439343530663835393334393f69786c69623d72622d342e302e33266175746f3d666f726d6174266669743d63726f7026773d3132303026713d3830');
     background-size: cover;
+    background-attachment: fixed;
 }
 
 html {
@@ -9,6 +10,7 @@ html {
     flex-direction: column;
     overflow-x: hidden;
     justify-content: center;
+    scroll-behavior: smooth;
 }
 
 header {
