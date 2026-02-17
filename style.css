@@ -82,7 +82,7 @@ header {
     color: #a3a3a3;
 }
 
-main {
+.main_full {
     user-select: none;
     display: flex;
     justify-content: center;
@@ -130,6 +130,13 @@ main {
     transition: all .2s;
     box-sizing: border-box;
     min-height: 500px;
+    text-align: center;
+    align-items: center;
+}
+
+.burger .btn {
+    align-self: stretch;
+    margin-top: auto;
 }
 
 .burger a{
@@ -170,8 +177,8 @@ footer {
 }
 
 .footer-info img {
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     margin-top: 1em;
     border-radius: 3em;
 }
@@ -189,11 +196,12 @@ footer {
     width: fit-content;
     border-radius: 0.5em;
     text-decoration: initial;
+    margin-top: 1.5em;
 }
 
 .footer-info img:hover{
     transition: all .2s;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: 8px 12px 10px #00000091;
 }
 
@@ -227,7 +235,7 @@ footer {
     font-size: 14px;
 }
 
-/* Стили для страницы отзывов */
+/* Стили для отзывов */
 .main-rewiev {
     padding-top: 1em;
     margin-top: 5em;
@@ -275,6 +283,17 @@ footer {
     mask-size: 100% 100%;
     transition: all .2s;
     --svg: url(/sourrce/github.svg);  
+}
+
+/*меню*/
+.main_menu{
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    min-height: 50vh;
+    height: auto;
 }
 
 /* Анимашки */
