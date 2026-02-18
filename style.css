@@ -41,10 +41,6 @@ header {
     gap: 1em;
 }
 
-.firstStar{
-    margin-left: 2.5em;
-}
-
 .otzivimain{
     height: auto;
 }
@@ -82,6 +78,7 @@ header {
 .infoburger{
     font-size: 0.7em;
     color: #a3a3a3;
+    flex-grow: 1
 }
 
 .main_full {
@@ -131,7 +128,7 @@ header {
     margin: 2em;
     transition: all .2s;
     box-sizing: border-box;
-    min-height: 500px;
+    height: 500px;
     text-align: center;
     align-items: center;
 }
@@ -291,6 +288,17 @@ footer {
     --svg: url(/sourrce/github.svg);  
 }
 
+.star{
+    width: 48px;
+    height: 48px;
+}
+
+.firstStar{
+    width: 48px;
+    height: 48px;
+    margin-left: 2.5em
+}
+
 /*меню*/
 .main_menu{
     user-select: none;
@@ -353,6 +361,19 @@ footer {
         transform: none;
         box-sizing: border-box;
     }
+
+    .star{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 0.2em;
+    }
+    
+    .firstStar{
+        width: 30px;
+        height: 30px;
+        margin-left: 0.5em;
+        margin-bottom: 0.2em;
+    }
     
     .div-header-buttons {
         flex-wrap: wrap;
@@ -373,7 +394,7 @@ footer {
     }
     
     .text-burgers {
-        margin-top: 150px;
+        margin-top: 170px;
         width: 100%;
         text-align: center;
     }
@@ -387,9 +408,8 @@ footer {
     .burger {
         margin: 5px;
         width: auto;
-        height: 200px;
         padding: 10px;
-        min-height: 280px;
+        height: 280px;
         font-size: 0.85em;
     }
     
@@ -434,5 +454,9 @@ footer {
     #cart-count {
         font-size: 18px;
         padding: 4px 10px;
+    }
+
+    .burger-stats{
+        font-size: 10px;
     }
 }
