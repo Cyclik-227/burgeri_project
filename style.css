@@ -370,6 +370,7 @@ footer {
         margin-top: 12em;
         width: 100vw;
         grid-template-rows: auto;
+        user-select: text;
     }
     
     .text-burgers {
