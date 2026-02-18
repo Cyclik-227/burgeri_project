@@ -1,4 +1,5 @@
 body {
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     background-image: url('https://camo.githubusercontent.com/e6658b6b7106d0733bba109276e523461edd7c598a4d518befe35f4c3fff2422/68747470733a2f2f696d616765732e756e73706c6173682e636f6d2f70686f746f2d313535303534373636302d6439343530663835393334393f69786c69623d72622d342e302e33266175746f3d666f726d6174266669743d63726f7026773d3132303026713d3830');
     background-size: cover;
@@ -6,6 +7,7 @@ body {
 }
 
 html {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -215,19 +217,23 @@ footer {
     bottom: 20px;
     right: 20px;
     z-index: 999;
-    background-color: #c2a33c;
-    color: black;
+    background: linear-gradient(135deg, #d4af37 0%, #a8862d 100%);
+    color: #1a1a1a;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 15px 30px;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 18px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
+    box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5), 0 6px 6px -5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid #fae08c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #cart-count {
-    background: #c20d0d;
+    background: #800000;
     color: white;
     padding: 2px 8px;
     border-radius: 50%;
@@ -324,6 +330,109 @@ footer {
 }
 
 .cart-button:hover {
-    transform: scale(1.05); 
-    background-color: #b69938;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 28px -10px rgba(212, 175, 55, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #eac756 0%, #c29d3b 100%);
+}
+
+.cart-button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/*медиа запросы*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1.2em 0;
+        border-radius: 0;
+        gap: 0.8em;
+        left: 0;
+        transform: none;
+        box-sizing: border-box;
+    }
+    
+    .div-header-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+    }
+    
+    .main-burgers {
+        margin-top: 12em;
+        width: 100vw;
+        grid-template-rows: auto;
+    }
+
+    .main-rewiev{
+        margin-top: 12em;
+        width: 100vw;
+        grid-template-rows: auto;
+    }
+    
+    .text-burgers {
+        margin-top: 150px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-burgers {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 0.5em;
+    }
+    
+    .burger {
+        margin: 5px;
+        width: auto;
+        height: 200px;
+        padding: 10px;
+        min-height: 280px;
+        font-size: 0.85em;
+    }
+    
+    .burger img {
+        max-width: 130px;
+    }
+    
+    .main-rewiev {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding-top: 2em;
+    }
+    
+    .otziv {
+        width: 90%;
+        margin: 10px 0;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        padding-bottom: 150px;
+        text-align: center;
+    }
+    
+    .footer-info {
+        margin-left: 0;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .cart-button {
+        padding: 15px 25px;
+        font-size: 20px;
+        bottom: 25px;
+        right: 25px;
+        border-radius: 60px;
+        box-shadow: 8px 25px rgba(0,0,0,0.5);
+    }
+    
+    #cart-count {
+        font-size: 18px;
+        padding: 4px 10px;
+    }
 }
