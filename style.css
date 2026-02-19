@@ -88,7 +88,8 @@ header {
     text-align: center;
     color: #fff;
     min-height: 50vh;
-    height: 85em;
+    height: auto;
+    padding-bottom: 3em;
 }
 
 .text-burgers {
@@ -110,7 +111,7 @@ header {
     min-height: 100vh;
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto;
 }
 
 .burger {
@@ -361,6 +362,30 @@ footer {
     margin-left: 13%;
 }
 
+#korzinaid{
+    display:grid; 
+    grid-template-columns: repeat(4, 25%);
+}
+
+.btn-del1t{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    border-color: #fff;
+    border-width: 1px;
+    border-style: dotted;
+    background: #0a0a0a;
+    color: #fff;
+    border-radius: 9px;
+    transition: all .3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: inherit;
+    width: 80%;
+}
+
 /* Анимашки */
 .logo:hover {
     transition: all .2s;
@@ -401,7 +426,17 @@ footer {
 
 /*медиа запросы*/
 @media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    header, .main-burgers, .burger, .main-rewiev, .otziv, .footer-info {
+        backdrop-filter: none;
+    }
+
     header {
+        background-color: #161616e6;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -413,13 +448,55 @@ footer {
         box-sizing: border-box;
     }
 
-    .star{
+    .main-burgers {
+        background-color: #00000049;
+        margin-top: 12em;
+        width: 100vw;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 0.5em;
+    }
+
+    .main-rewiev {
+        background-color: #181818fa;
+        margin-top: 12em;
+        width: 100vw;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding-top: 2em;
+    }
+
+    .burger {
+        background-color: #161616;
+        margin: 5px;
+        width: auto;
+        padding: 10px;
+        height: 280px;
+        font-size: 0.85em;
+    }
+
+    .otziv {
+        background-color: #1b1b1b;
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .footer-info {
+        background-color: #222222;
+        margin-left: 0;
+        align-items: center;
+        width: 100%;
+    }
+
+    .star {
         width: 30px;
         height: 30px;
         margin-bottom: 0.2em;
     }
     
-    .firstStar{
+    .firstStar {
         width: 30px;
         height: 30px;
         margin-left: 0.5em;
@@ -432,51 +509,14 @@ footer {
         gap: 0.5em;
     }
     
-    .main-burgers {
-        margin-top: 12em;
-        width: 100vw;
-        grid-template-rows: auto;
-    }
-
-    .main-rewiev{
-        margin-top: 12em;
-        width: 100vw;
-        grid-template-rows: auto;
-    }
-    
     .text-burgers {
         margin-top: 170px;
         width: 100%;
         text-align: center;
     }
     
-    .main-burgers {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 0.5em;
-    }
-    
-    .burger {
-        margin: 5px;
-        width: auto;
-        padding: 10px;
-        height: 280px;
-        font-size: 0.85em;
-    }
-    
     .burger img {
         max-width: 130px;
-    }
-    
-    .main-rewiev {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        padding-top: 2em;
-    }
-    
-    .otziv {
-        width: 90%;
-        margin: 10px 0;
     }
     
     footer {
@@ -485,12 +525,6 @@ footer {
         gap: 2em;
         padding-bottom: 150px;
         text-align: center;
-    }
-    
-    .footer-info {
-        margin-left: 0;
-        align-items: center;
-        width: 100%;
     }
     
     .cart-button {
@@ -507,7 +541,7 @@ footer {
         padding: 4px 10px;
     }
 
-    .burger-stats{
+    .burger-stats {
         font-size: 10px;
     }
 
@@ -519,8 +553,6 @@ footer {
         transform: translate(-50%, -50%);
         padding: 15px;
         max-height: none;
-        overflow-y: visible;
-        box-sizing: border-box;
         height: auto;
     }
     
@@ -543,5 +575,10 @@ footer {
         margin: 5px 0;
         font-size: 14px;
         padding: 10px;
+    }
+
+    .btn-del1t{
+        width: 90%; 
+        font-size: 8px;
     }
 }

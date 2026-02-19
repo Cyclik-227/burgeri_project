@@ -59,9 +59,8 @@ for (let i = 0; i < buttons.length; i++) {
         p_price.innerHTML = price + 'р.';
 
         let btn_del = document.createElement('div');
-        btn_del.className = 'btn';
+        btn_del.className = 'btn-del1t';
         btn_del.innerHTML = 'Удалить';
-        btn_del.style.width = '70%';
 
         cart_content.appendChild(p_name);
         cart_content.appendChild(p_stats);
@@ -108,13 +107,6 @@ if (clear_btn) {
         total_price.innerHTML = '0р.';
         cart = [];
     });
-}
-
-let review_btn = document.getElementById("fdfd");
-if (review_btn) {
-    review_btn.onclick = function() {
-        alert('Какой еще отзыв?! Сначала купите что-нибудь! 🍔');
-    };
 }
 
 document.getElementById("fdfd").onclick = function() {

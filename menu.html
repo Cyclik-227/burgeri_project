@@ -78,7 +78,7 @@
             <div class="burger">
                 <img src="images/cezar.jpg" alt="Бургер">
                 <span>Цезарь бургер</span>
-                <span class="infoburger">Состав: Куриное филе, пармезан, томаты черри, салат Романо, соус Цезарь.</span>
+                <span class="infoburger">Состав: Куриное филе, пармезан, черри, салат, соус Цезарь.</span>
                 <span class="burger-stats">290г | 520 ккал | L</span>
                 <a class="btn"id="cezar"><i class="arrow" ></i>
                     В корзину
@@ -100,7 +100,7 @@
             <div class="burger">
                 <img src="images/hellhryak.jpg" alt="Бургер">
                 <span>Адский Хряк</span>
-                <span class="infoburger">Состав: Котлета из говядины, сыр гауда, маринованный халапеньо, лук конфи, соус.</span>
+                <span class="infoburger">Состав: Котлета, сыр, халапеньо, лук конфи, соус.</span>
                 <span class="burger-stats">380г | 780 ккал | L</span>
                 <a class="btn"id="adsk-hruk"><i class="arrow" ></i>
                     В корзину
@@ -122,7 +122,7 @@
             <div class="burger">
                 <img src="images/grib.jpg" alt="Бургер">
                 <span>Грибник</span>
-                <span class="infoburger">Состав: Говяжья котлета, обжаренные шампиньоны, карамелизированный лук, трюфельный майонез.</span>
+                <span class="infoburger">Состав: котлета, шампиньоны, карамелизированный лук, трюфельный майонез.</span>
                 <span class="burger-stats">340г | 690 ккал | L</span>
                 <a class="btn"id="gribnik"><i class="arrow" ></i>
                     В корзину
@@ -169,16 +169,16 @@
         </div>
 
         <div class="cart-container" id="cart-container"> 
-             <p style="margin-top: 0; margin-bottom: 0;">Корзина</p>
-             <div style="display:grid; grid-template-columns: repeat(4, 25%);">
-                <p>Название</p><p>Информация</p><p>Цена</p><p></p>
+             <p>Корзина</p>
+             <div id="korzinaid">
+                <p>Название</p><p>Информация</p><p>Цена</p>
              </div>
 
              <div class="cart-content"> </div>
 
              <p> Позиций: <span id="total-items"> 0</span>. Итого к оплате: <span id="total-price">0р.</span> </p>
              
-            <div class="btn" id="btn_clear_cart"> Очистить корзину </div> <div class="btn"> Оплатить </div>
+            <div class="btn" id="btn_clear_cart"> Очистить корзину </div> <a href="cart.html" class="btn">Оплатить </a>
 
         </div>
 
