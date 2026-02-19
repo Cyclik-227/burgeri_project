@@ -510,4 +510,38 @@ footer {
     .burger-stats{
         font-size: 10px;
     }
+
+    .cart-container {
+        width: 95%;
+        max-width: 95%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px;
+        max-height: none;
+        overflow-y: visible;
+        box-sizing: border-box;
+        height: auto;
+    }
+    
+    .cart-content {
+        grid-template-columns: 2fr 1fr 1fr 0.5fr;
+        font-size: 12px;
+        gap: 10px 5px;
+        align-items: center;
+    }
+    
+    .cart-container div {
+        grid-template-columns: 2fr 1fr 1fr 0.5fr;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .cart-container .btn {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 14px;
+        padding: 10px;
+    }
 }
