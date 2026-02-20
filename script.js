@@ -9,7 +9,6 @@ let total_price = document.getElementById('total-price');
 
 // Функция сохранения корзины в cookies
 function saveCartToCookies() {
-    // Собираем данные о товарах в корзине
     let cartItems = [];
     let items = cart_content.querySelectorAll('.cart-item');
     
@@ -21,7 +20,6 @@ function saveCartToCookies() {
         });
     });
     
-    // Сохраняем в cookies на 7 дней
     let cartData = JSON.stringify(cartItems);
     
     document.cookie = `cartItems=${encodeURIComponent(cartData)}; max-age=${7 * 24 * 60 * 60}; path=/`;
@@ -30,25 +28,20 @@ function saveCartToCookies() {
 
 // Функция загрузки корзины из cookies
 function loadCartFromCookies() {
-    // Получаем все cookies
     let cookies = document.cookie.split('; ');
     let cartData = null;
     
-    // Ищем нужные cookies
     cookies.forEach(cookie => {
         let [name, value] = cookie.split('=');
         if (name === 'cartItems') cartData = decodeURIComponent(value);
     });
     
-    // Если есть сохраненные данные, восстанавливаем корзину
     if (cartData) {
         let items = JSON.parse(cartData);
         
-        // Очищаем текущую корзину
         cart_content.innerHTML = '';
         cart = [];
         
-        // Восстанавливаем каждый товар
         items.forEach(item => {
             let cartItem = document.createElement('div');
             cartItem.className = 'cart-item';
@@ -77,7 +70,7 @@ function loadCartFromCookies() {
             
             cart.push(item.price);
             
-            // Добавляем обработчик удаления
+            //обработчик удаления
             btn_del.addEventListener('click', function() {
                 cartItem.remove();
                 
@@ -88,16 +81,13 @@ function loadCartFromCookies() {
                 cart_count.innerHTML = current_count - 1;
                 total_items.innerHTML = current_count - 1;
                 
-                // Обновляем корзину в памяти
                 let index = cart.indexOf(item.price);
                 if (index > -1) cart.splice(index, 1);
-                
-                // Обновляем cookies после удаления
+    
                 saveCartToCookies();
             });
         });
-        
-        // Восстанавливаем общую информацию
+
         let total = items.reduce((sum, item) => sum + item.price, 0);
         total_price.innerHTML = total + 'р.';
         cart_count.innerHTML = items.length;
@@ -184,30 +174,30 @@ for (let i = 0; i < buttons.length; i++) {
             cart_count.innerHTML = current_count - 1;
             total_items.innerHTML = current_count - 1;
             
-            // Удаляем из массива cart
             let index = cart.indexOf(price);
             if (index > -1) cart.splice(index, 1);
             
-            // Сохраняем изменения в cookies
             saveCartToCookies();
         });
 
-        // Сохраняем корзину в cookies после добавления
         saveCartToCookies();
     });
 }
 
-// Обработчик открытия/закрытия корзины
 let is_cart_open = false;
 if (cart_button) {
     cart_button.addEventListener('click', function() {
         if (is_cart_open == false) {
             show_obj(cart_background, 0.5, 0.05);
             show_obj(cart_container, 0.9, 0.05);
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
             is_cart_open = true;
         } else {
             hide_obj(cart_background, 0.08);
             hide_obj(cart_container, 0.08);
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
             is_cart_open = false;
         }
     });
@@ -222,19 +212,15 @@ if (clear_btn) {
         total_items.innerHTML = '0';
         total_price.innerHTML = '0р.';
         cart = [];
-        
-        // Очищаем cookies
         document.cookie = 'cartItems=; max-age=0; path=/';
         document.cookie = 'cartCount=; max-age=0; path=/';
     });
 }
 
-// Анимация появления страницы
 setTimeout(function(){
     document.body.classList.add('body_visible');
 }, 50);
 
-// Обработчик для отзыва
 let fdfd = document.getElementById("fdfd");
 if (fdfd != null) {
     fdfd.onclick = function() {
@@ -242,7 +228,6 @@ if (fdfd != null) {
     };
 }
 
-// Загружаем корзину при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     loadCartFromCookies();
 });

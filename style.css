@@ -357,22 +357,23 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     width: 100%;
-    height: 600px;
+    height: 305px;
     row-gap: 10px;
-    max-height: 600px;
+    max-height: 500px;
     overflow-y: auto;
     grid-auto-rows: 73px;
 }
 
 .cart-item {
-    margin-top: 0px; margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     display: contents;
-
 }
 
 .cart-container .btn {
     width: 75%;
     margin-left: 13%;
+    height: auto;
 }
 
 #korzinaid{
@@ -418,8 +419,12 @@ footer {
     background-color: #2f2f2f;
 }
 
-
-
+.no-scroll {
+    overflow: hidden !important;
+    height: 100% !important;
+    position: fixed !important;
+    width: 100% !important;
+}
 
 /* Анимашки */
 .logo:hover {
