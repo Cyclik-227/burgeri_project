@@ -107,8 +107,13 @@ if (clear_btn) {
         total_price.innerHTML = '0р.';
         cart = [];
     });
-}
+};
+
+setTimeout(function(){
+	document.body.classList.add('body_visible');
+}, 50);
 
 document.getElementById("fdfd").onclick = function() {
     alert('Какой еще отзыв?! Сначала купите что-нибудь! 🍔');
 };
+

@@ -239,6 +239,15 @@ footer {
     font-size: 14px;
 }
 
+.body_hide {
+	opacity: 0;
+	transition: 0.5s opacity ease-in-out;
+}
+
+.body_visible {
+	opacity: 1;
+}
+
 /* Стили для отзывов */
 .main-rewiev {
     padding-top: 1em;
