@@ -89,10 +89,14 @@ if (cart_button) {
         if (is_cart_open == false) {
             show_obj(cart_background, 0.5, 0.05);
             show_obj(cart_container, 0.9, 0.05);
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
             is_cart_open = true;
         } else {
             hide_obj(cart_background, 0.08);
             hide_obj(cart_container, 0.08);
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
             is_cart_open = false;
         }
     });
