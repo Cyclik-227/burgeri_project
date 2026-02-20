@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cartStyle.css">
     <title>BurgerFlow Отзывы</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -28,12 +28,163 @@
         </div>
     </header>
 
-    <main class="otzivimain">
+    <main class="cart-main">
+
         <div class="main-rewiev">
+
+
             <div>
-                <p>Итого к оплате: <span id="total">потом сделаю</span>р.</p>
+                <!-- <p>Итого к оплате: <span id="cart-total-price">0</span>р.</p> -->
             </div>
+
+                    <h1>🛒 Оформление заказа</h1>
+                    <div class="subtitle">Доставка по Москве и области — от 30 минут. Безопасная оплата.</div>
+
+
+             <div class="checkout-container">
+
+
+
+                    <form id="deliveryForm" onsubmit="event.preventDefault(); alert('✅ Заказ оформлен (демо). Данные карты: **** ' + document.getElementById('cvv').value);">
+                        
+                        <!-- БЛОК 1: Адрес доставки (расширенный для ПК) -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <span>1</span> Адрес доставки
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group street-group">
+                                    <label for="street">Улица, дом, квартира *</label>
+                                    <input type="text" id="street" placeholder="Ленина, 15, кв. 32" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Город *</label>
+                                    <input type="text" id="city" value="Москва" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postal">Почтовый индекс</label>
+                                    <input type="text" id="postal" placeholder="101000">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="entrance">Подъезд</label>
+                                    <input type="text" id="entrance" placeholder="2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="floor">Этаж</label>
+                                    <input type="text" id="floor" placeholder="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="doorphone">Код домофона</label>
+                                    <input type="text" id="doorphone" placeholder="12К">
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="comment">Комментарий для курьера</label>
+                                <textarea id="comment" rows="2" placeholder="Ориентир: синяя дверь, позвонить за 10 минут..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- БЛОК 2: Контактные данные (широкий формат) -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <span>2</span> Контактные данные
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Полное имя *</label>
+                                    <input type="text" id="name" placeholder="Иван Петров" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Телефон *</label>
+                                    <input type="tel" id="phone" placeholder="+7 999 123-45-67" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email (для чека)</label>
+                                    <input type="email" id="email" placeholder="ivan@example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- БЛОК 3: Оплата (акцент на карту) -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <span>3</span> Оплата
+                            </div>
+                            
+                            <!-- Выбор метода оплаты -->
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card" checked> 💳 Банковская карта
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cash"> 💵 Наличные
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="sbp"> 🏦 СБП (QR-код)
+                                </label>
+                            </div>
+
+                            <!-- Детали карты (для ПК все поля в одной строке, где возможно) -->
+                            <div class="card-details">
+                                <div class="form-row">
+                                    <div class="form-group full-width card-input-wrapper" style="flex: 2;">
+                                        <span class="card-icon">💳</span>
+                                        <label for="card-number">Номер карты *</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group card-input-wrapper" style="flex: 1;">
+                                        <span class="card-icon">📅</span>
+                                        <label for="expiry">Срок *</label>
+                                        <input type="text" id="expiry" placeholder="ММ/ГГ" maxlength="5" inputmode="numeric" required>
+                                    </div>
+                                    <div class="form-group card-input-wrapper" style="flex: 0.5;">
+                                        <span class="card-icon">🔒</span>
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" placeholder="123" maxlength="3" inputmode="numeric" required>
+                                    </div>
+                                    <div class="form-group" style="flex: 1.5;">
+                                        <label for="cardholder">Владелец (как на карте)</label>
+                                        <input type="text" id="cardholder" placeholder="IVAN PETROV">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Итог заказа (более детальный для ПК) -->
+                        <div class="order-summary">
+
+                            <div class="summary-row total">
+                                <span>ИТОГО К ОПЛАТЕ</span>
+                                <span id="cart-total-price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка -->
+                        <button type="submit" class="submit-button">✅ Оформить заказ и оплатить</button>
+
+                        <div class="secure-notice">
+                            <span>🔒</span> Защищённое соединение (SSL). Данные не передаются третьим лицам.
+                        </div>
+
+                        <hr>
+                        <p style="text-align: center; color: #8c9eb8; font-size: 13px; margin-top: 10px;">
+                            ⚡ Демонстрационная форма для ПК. Все поля интерактивны, данные не уходят.
+                        </p>
+                    </form>
+
+
+                </div>
+
         </div>
+        
     </main>
 
     <footer id="footer">
@@ -54,7 +205,7 @@
             <a href="https://github.com/Damtwost">Damtwost</a>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="cartScript.js"></script>
 </body>
 
 </html>
